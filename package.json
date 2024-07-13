@@ -10,7 +10,7 @@
     "bundle": "tsc --noEmit && npm run bundle:client && npm run bundle:api",
     "bundle:client": "vite build",
     "bundle:api": "npm run clean && tsc -p tsconfig.api.json && blocklet bundle --compact --create-release",
-    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
+    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle --app-id did:abt:zNKhV4McXHgTgnrmoZAm22SJwRehUajuMoqu",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "prepare": "npx simple-git-hooks",
     "bump-version": "zx --quiet scripts/bump-version.mjs"
@@ -40,15 +40,19 @@
     "@arcblock/did-auth": "^1.18.126",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
     "@blocklet/sdk": "^1.16.28",
+    "@blocklet/ui-react": "^2.10.5",
     "@ocap/client": "^1.18.126",
     "@ocap/mcrypto": "^1.18.126",
     "@ocap/wallet": "^1.18.126",
+    "antd": "^5.19.1",
     "axios": "^1.7.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv-flow": "^4.1.0",
     "express": "^4.19.2",
-    "express-async-errors": "^3.1.1"
+    "express-async-errors": "^3.1.1",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "@arcblock/eslint-config": "^0.3.2",

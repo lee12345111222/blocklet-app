@@ -1,12 +1,14 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+// import { ThemeProvider } from '@arcblock/ux/lib/Theme';
+// import { SessionProvider } from './libs/session';
 
-import Home from './pages/home';
+import Profile from './pages/profile';
 
 function App() {
   return (
     <div className="app">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Profile />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>
@@ -18,8 +20,12 @@ export default function WrappedApp() {
   const basename = window?.blocklet?.prefix || '/';
 
   return (
+    // <ThemeProvider>
+    //   <SessionProvider serviceHost={basename}>
     <Router basename={basename}>
       <App />
     </Router>
+    //   </SessionProvider>
+    // </ThemeProvider>
   );
 }
